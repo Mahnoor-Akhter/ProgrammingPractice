@@ -15,11 +15,28 @@ namespace ProgrammingPractice
 
 		public   Genre MusicGenre { get; set; }
 		//constructors
-
-
+		public song (string title ,string artist,double duration, Genre musicGenre)
+		{
+			Title = title;
+			Artist = artist;
+			Duration = duration;
+			MusicGenre = musicGenre;
+		}
+		public song(string title, string artist): this(title,artist,0,Genre.Other)
+		{
+			
+		}
+		public song():this("Unknown","Unknown")
+		{
+	
+		}
 
 		// methods
-
+		public override string ToString()
+		{
+			return string.Format($"{Title} {Artist} {Duration} {MusicGenre}");
+		   
+		}
 
 	}
 	public enum Genre { Rock,Pop ,Dance, Other}
